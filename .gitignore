@@ -1,0 +1,10 @@
+data/history/
+data/gold/
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.gradio/
+*.mp4
+.DS_Store

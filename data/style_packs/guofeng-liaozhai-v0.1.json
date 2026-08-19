@@ -1,0 +1,79 @@
+{
+  "id": "guofeng-liaozhai-v0.1",
+  "name": "聊斋国风·美影夜谈",
+  "version": "0.1",
+  "description": "上海美影式 2D、戏曲妆、冷蓝夜景室内，适配聊斋/志怪短片。",
+  "aesthetic": {
+    "linework": "干净稳定的黑色勾线，类似传统手绘赛璐璐动画",
+    "shading": "平涂为主，弱阴影，月光柔光，忌厚涂与强立体光",
+    "faces": "戏曲生旦妆感：吊眉、眼周丹红/粉晕，五官略程式化",
+    "palette": "背景冷蓝夜色，人物用米白、青绿、朱红点缀，整体清冷哀婉",
+    "atmosphere": "室内夜景、窗棂月光、纱帐与罗汉床，神秘而人情味重"
+  },
+  "positive_keywords_zh": [
+    "中国风2D动画",
+    "上海美影风格",
+    "赛璐璐平涂",
+    "粗细均匀黑线勾边",
+    "戏曲妆吊眉眼晕",
+    "冷蓝月光夜景",
+    "传统窗棂与纱帐",
+    "志怪人情氛围"
+  ],
+  "positive_keywords_en": [
+    "traditional Chinese 2D animation",
+    "Shanghai Animation Film Studio style",
+    "cel shading flat colors",
+    "clean bold black outlines",
+    "Peking opera makeup arched brows rosy eyeshadow",
+    "cool blue moonlight interior",
+    "latticed Chinese windows gauze curtains",
+    "Liaozhai ghost-story atmosphere"
+  ],
+  "negative_keywords": [
+    "photorealistic",
+    "3D render",
+    "CGI",
+    "anime big eyes",
+    "western cartoon",
+    "thick oil painting",
+    "neon cyberpunk",
+    "purple glow",
+    "modern clothing",
+    "blurry",
+    "deformed face",
+    "extra fingers"
+  ],
+  "mj_style_lock": "traditional Chinese 2D animation, Shanghai Animation Film Studio aesthetic, clean bold black outlines, cel-shaded flat colors, soft moonlight, Peking opera stylized makeup with arched brows and rosy eye shadow, cool blue night interior, latticed windows, gauze curtains, Liaozhai Zhiyi atmosphere --stylize 180 --v 6.1",
+  "seedance_style_lock": "中国风2D手绘动画，美影式黑线平涂，戏曲妆面，冷蓝月光室内，窗棂纱帐，镜头稳定，人物一致性强，赛璐璐质感，忌写实3D与现代服饰",
+  "duration_presets": [
+    {"id": "8s", "seconds": 8, "shots": 1, "label": "单镜情绪/对白"},
+    {"id": "12s", "seconds": 12, "shots": 2, "label": "环境→互动"},
+    {"id": "15s", "seconds": 15, "shots": 3, "label": "环境→对坐→反应"}
+  ],
+  "shot_templates": [
+    {
+      "id": "establishing_night_room",
+      "name": "夜室内建立镜头",
+      "when": "开场建立环境",
+      "seedance_hint": "缓慢推进，展示传统卧室、窗棂外夜色、纱帐微动，无人或人物背影入画"
+    },
+    {
+      "id": "two_shot_bed_talk",
+      "name": "罗汉床对坐",
+      "when": "两人对话/对峙",
+      "seedance_hint": "中景双人，罗汉床上对坐，目光交流，轻微手势与衣袖摆动，对白情绪明确"
+    },
+    {
+      "id": "reaction_closeup",
+      "name": "情绪特写",
+      "when": "反应或收束",
+      "seedance_hint": "近景面部特写，戏曲妆清晰，眼神与微表情变化，背景虚化夜窗"
+    }
+  ],
+  "forbidden_notes": [
+    "不要把志怪做成恐怖片跳吓",
+    "不要现代网络用语对白",
+    "不要堆砌灵异特效；气氛靠光色与表演"
+  ]
+}
