@@ -2,6 +2,18 @@
 
 Vue 前端 + 薄 FastAPI 后端。把短文压成 **6–15 秒**可拍包，导出 Midjourney / 即梦 Seedance 提示词，并对成片打分回流。
 
+## 环境要求
+
+- **Node.js ≥ 18.18**（推荐 20 LTS）。Node 16 会直接报错（`styleText` / Vite 不支持）。
+- Python 3.10+
+
+用 `node -v` 查看版本。Windows 可用 [nvm-windows](https://github.com/coreybutler/nvm-windows) 安装：
+
+```bash
+nvm install 20
+nvm use 20
+```
+
 ## 开发启动（两个终端）
 
 ```bash
@@ -16,12 +28,12 @@ python server.py
 ```bash
 # 终端 2：前端
 cd web
+rm -rf node_modules package-lock.json   # 若刚从旧依赖升级，先清一次
 npm install
 npm run dev
 ```
 
 打开：http://127.0.0.1:5173（Vite 会把 `/api` 代理到后端 `7860`）
-
 ## 仅后端托管打包前端
 
 ```bash
