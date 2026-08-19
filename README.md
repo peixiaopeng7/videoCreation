@@ -1,46 +1,61 @@
-# 聊斋短片工作室（本地 v0.1）
+# 聊斋短片工作室（本地 v0.2）
 
-个人用本地工具：把短文压成 **6–15 秒**可拍包，导出 Midjourney / 即梦 Seedance 提示词，并对成片打分回流。
+Vue 前端 + 薄 FastAPI 后端。把短文压成 **6–15 秒**可拍包，导出 Midjourney / 即梦 Seedance 提示词，并对成片打分回流。
 
-## 快速开始
+## 开发启动（两个终端）
 
 ```bash
+# 终端 1：后端
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # 可选：填 LLM_API_KEY
-python app.py
+cp .env.example .env   # 可选
+python server.py
 ```
 
-浏览器打开：http://127.0.0.1:7860
+```bash
+# 终端 2：前端
+cd web
+npm install
+npm run dev
+```
 
-未配置 `LLM_API_KEY` 时走本地模板，仍可完整跑通：生成 → 复制提示词 → 打分。
+打开：http://127.0.0.1:5173（Vite 会把 `/api` 代理到后端 `7860`）
+
+## 仅后端托管打包前端
+
+```bash
+cd web && npm run build && cd ..
+python server.py
+```
+
+然后打开：http://127.0.0.1:7860
 
 ## 工作流
 
-1. 贴短文 / 梗 → 选风格包与时长档（8s / 12s / 15s）
+1. 贴短文 → 选风格包与时长档
 2. 复制 MJ 提示词 → Midjourney 定妆
-3. 按镜复制 Seedance 提示词 → 即梦出短片
-4. 历史页打四维分；高分自动进金样例，供下次 LLM 参考
+3. 复制 Seedance 提示词 → 即梦出短片
+4. 历史页打分；高分进金样例
 
-## 目录
+## 关于「要不要填大模型密钥」
 
-```
-app.py                 Gradio 入口
-src/                   生成管线、存储、反馈
-data/style_packs/      风格包（可改 JSON 持续迭代）
-data/history/          每次生成记录
-data/gold/             高分金样例
-```
-
-## LLM（可选）
-
-任意 OpenAI 兼容接口均可：
+- **不填也能用**：走本地模板，先跑通复制提示词 → 出片 → 打分。
+- **填了更好用**：短文会按你的内容真正改编成剧本（任意 OpenAI 兼容接口，如 DeepSeek）。
 
 ```env
-LLM_API_KEY=sk-...
+LLM_API_KEY=
 LLM_BASE_URL=https://api.openai.com/v1
 LLM_MODEL=gpt-4o-mini
 ```
 
-DeepSeek / 通义 / SiliconFlow 等改 `LLM_BASE_URL` + `LLM_MODEL` 即可。
+## 目录
+
+```
+server.py              FastAPI 入口
+src/                   生成管线 / 存储 / 反馈
+web/                   Vue3 + Vite 前端
+data/style_packs/      风格包
+data/history/          生成历史
+data/gold/             高分金样例
+```
