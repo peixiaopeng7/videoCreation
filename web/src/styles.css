@@ -1,0 +1,51 @@
+:root {
+  --bg: #0f161c;
+  --bg-elev: #172029;
+  --bg-soft: #1d2a36;
+  --line: #2b3c4d;
+  --text: #e8eef5;
+  --muted: #93a4b5;
+  --accent: #c9a46c;
+  --accent-dim: #8f7345;
+  --ok: #6fbf9a;
+  --danger: #d87a6a;
+  --radius: 10px;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #243447 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #1a2836 0%, transparent 50%),
+    var(--bg);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
+}

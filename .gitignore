@@ -1,0 +1,14 @@
+data/history/*
+!data/history/.gitkeep
+data/gold/*
+!data/gold/.gitkeep
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.gradio/
+web/node_modules/
+web/dist/
+*.mp4
+.DS_Store
