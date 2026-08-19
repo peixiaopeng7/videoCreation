@@ -1,5 +1,7 @@
-data/history/
-data/gold/
+data/history/*
+!data/history/.gitkeep
+data/gold/*
+!data/gold/.gitkeep
 .env
 __pycache__/
 *.pyc
